@@ -22,9 +22,8 @@ return new class extends Migration
             $table->timestamps();
             $table->index('waktu_scan');
             $table->index('mahasiswa_id');
-
-            DB::statement('ALTER TABLE absensis ADD UNIQUE KEY unique_absen_per_hari (mahasiswa_id, (DATE(waktu_scan)))');
         });
+        DB::statement('ALTER TABLE absensis ADD UNIQUE KEY unique_absen_per_hari (mahasiswa_id, (DATE(waktu_scan)))');
     }
 
     /**
